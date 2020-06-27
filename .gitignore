@@ -1,0 +1,11 @@
+# build output
+dist
+.next
+
+# dependencies
+node_modules
+package-lock.json
+
+# test output
+.DS_Store
+
