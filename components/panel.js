@@ -10,9 +10,17 @@ class Panel extends React.Component {
     }
     async componentDidMount(){
         let s = []
+
+        this.props.data.data.map(p =>{
+            s.push({id: p, story: []})
+        })
         this.props.data.data.map(p => {
             getData(p).then(story => {
-                s.push(story)
+                s.find((o, i) => {
+                    if (o.id === p) {
+                        s[i] = { id: p, story: story };
+                    }
+                });
                 this.setState({stories: s})
             })    
         })
@@ -27,7 +35,7 @@ class Panel extends React.Component {
                 </p>
                 {
                     this.state.stories.map(s =>{
-                        return <Card key={s.id} data={s} />
+                        return <Card key={s.id} data={s.story} />
                     })
                 }
             </article>

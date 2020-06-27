@@ -12,9 +12,9 @@ function Index(props) {
             <Layout>
                 <div className="container">
                     <div className="columns">
-                        <Column title="front page" data={frontpage} />
-                        <Column title="show hn" data={showhn} />
-                        <Column title="ask hn" data={askhn} />
+                        <Column title="FRONT PAGE" data={frontpage} />
+                        <Column title="SHOW HN" data={showhn} />
+                        <Column title="ASK HN" data={askhn} />
                     </div>
                 </div>
             </Layout>
